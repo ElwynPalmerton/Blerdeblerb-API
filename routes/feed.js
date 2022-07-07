@@ -322,6 +322,7 @@ router.post("/like", auth, async (req, res) => {
 
 ///REBLERB///
 router.post("/reblerb", auth, async (req, res) => {
+  console.log(chalk.red("REBLERBING!"));
   console.log(chalk.blueBright("Current user: ", req.user._id));
   console.log(chalk.magenta("reblerbed post: ", req.body.postID));
 
@@ -342,6 +343,8 @@ router.post("/reblerb", auth, async (req, res) => {
   } else {
     source = reblerbedPost;
   }
+
+  console.log(chalk.blueBright("source: ", source));
 
   //Check to see if the current user already reblerbed this blerb.
   const alreadyReblerbed = await Reblerb.find({
@@ -387,6 +390,8 @@ router.post("/reblerb", auth, async (req, res) => {
   reblerbedPost.totalReblerbs = reblerbCount;
   await reblerbedPost.save();
 
+  console.log("reblerbedPost: ", reblerbedPost);
+
   //Create the new reblerbPost with the current user as owner:
   const newReblerbPost = new Post({
     owner: req.user._id,
@@ -394,7 +399,9 @@ router.post("/reblerb", auth, async (req, res) => {
     text: source.text,
     isReblerb: true,
     reblerbOf: newReblerb._id,
-    totalLikes: source.totalLikes, //I need to handle LIKES
+    totalLikes: source.totalLikes,
+    // likes: reblerbedPost.likes, //This won't include likes added to the source
+    likes: source.likes,
     totalReblerbs: reblerbCount,
   });
 
@@ -403,6 +410,8 @@ router.post("/reblerb", auth, async (req, res) => {
   //Populate the post
   let populatedNewReblerbPost = await populateName(newReblerbPost, "author");
   resultBlerb = await populateName(populatedNewReblerbPost, "owner");
+
+  console.log(chalk.blue("result: ", resultBlerb));
 
   //Send the post to the frontend.
   return res.status(200).send(resultBlerb);
