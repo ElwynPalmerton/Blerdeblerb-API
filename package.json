@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": "v16.00.0"
+    "node": "v16.0.0"
   },
   "dependencies": {
     "atob": "^2.1.2",
