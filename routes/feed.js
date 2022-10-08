@@ -112,7 +112,7 @@ router.get("/blerbstream/", auth, async (req, res) => {
 
   //Find the current date minus thirty daays ago.
   const currentDate = new Date();
-  let start = getDateAgo(currentDate, 30);
+  let start = getDateAgo(currentDate, 700);
   if (lastUpdatedDT > nowMinusMonth) {
     start = lastUpdatedDT.plus({ seconds: 5 }).toISO();
   } else {

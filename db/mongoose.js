@@ -1,7 +1,17 @@
 const mongoose = require("mongoose");
 
-const dbURI = "mongodb://localhost:27017/social";
+// const dbURI = "mongodb://localhost:27017/social";
 // const dbURI = process.env.MONGODB_URI
+
+//
+// Elwyn_Palmerton
+
+// W94gQKc6wVb24ik
+
+// const dbURI =
+// "mongodb+srv://Elwyn_Palmerton:W94gQKc6wVb24ik@blerdeblerbdb.svbll.mongodb.net/?retryWrites=true&w=majority";
+
+const dbURI = process.env.MONGODB_URI;
 
 const db = mongoose
   .connect(dbURI, {

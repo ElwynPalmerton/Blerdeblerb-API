@@ -48,7 +48,8 @@ app.get("/test", async (req, res) => {
 //   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 // });
 
-const port = process.env.PORT || 5000;
+// const port = process.env.PORT || 5000;
+const port = 5001;
 app.listen(port, () => {
   console.log(`Blerdeblerb listening on ${port}`);
 });
