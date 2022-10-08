@@ -112,7 +112,7 @@ router.post("/register", cors(), async (req, res) => {
   }
 });
 
-/////////////////////LOGIN///////////////////////
+// LOGIN
 
 router.post("/login", async (req, res) => {
   console.log(chalk.magenta("Inside Login"));
