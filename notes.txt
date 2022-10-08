@@ -1,0 +1,9 @@
+ 
+ docker build . -t <your username>/node-web-app
+ docker build . -t elwyn/blerdeblerb-api 
+
+
+ docker run -p 5001:5001 -d elwyn/blerdeblerb-api -it
+
+
+ docker ps
