@@ -3,7 +3,13 @@
  docker build . -t elwyn/blerdeblerb-api 
 
 
- docker run -p 5001:5001 -d elwyn/blerdeblerb-api -it
+ docker run -p 5001:5001 -d blerb-api:1 -it
 
 
  docker ps
+
+
+Ran this to build:
+docker build . -t blerb-api:1
+
+docker run -it --rm -p 8080:8080 blerb-api:1
