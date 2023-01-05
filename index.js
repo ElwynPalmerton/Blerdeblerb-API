@@ -9,7 +9,6 @@ const chalk = require("chalk");
 var usersRouter = require("./routes/users");
 var feedRouter = require("./routes/feed");
 var followingRouter = require("./routes/following");
-// const generatePassword = require('password-generator');
 const cors = require("cors");
 
 const app = express();
@@ -21,7 +20,9 @@ if (process.env.NODE_ENV === "production") {
     else next();
   });
 }
+
 // Serve static files from the React app
+// todo: Doesn't need to serve static files since UI is deployed separately (remove)
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -37,18 +38,6 @@ app.get("/test", async (req, res) => {
   return res.status(200).send("Hello Test!");
 });
 
-// app.get("/", (req, res) => {
-//   // res.send("<h1>Served from * route</h1>")
-//   res.sendFile(path.join(__dirname, "build", "index.html"));
-// });
-
-// The "catchall" handler: for any request that doesn't
-// match one above, sends back React's index.html file.
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname + "/client/build/index.html"));
-// });
-
-// const port = process.env.PORT || 5000;
 const port = 8080;
 app.listen(port, () => {
   console.log(`Blerdeblerb listening on ${port}`);

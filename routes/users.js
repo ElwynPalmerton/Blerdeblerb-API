@@ -259,27 +259,4 @@ router.get("/avatar/:id", async (req, res) => {
   }
 });
 
-//Routes for google-passport-OAuth20
-// //passport google strategy is configured in config/passport-setup.js
-// router.get('/google', passport.authenticate('google', {
-//   scope: ['profile']
-// }))
-
-// router.get('/success', passport.authenticate('google'), (req, res) => {
-//   //This route is unfinished. Currently working on it...
-//   //I need to setup passport with the options Success Redirect and Failure Redirect.
-
-//   console.log("Google Login Success");
-
-//   //req.user is available on the req object because it is deserialized by passport
-//   //passport.initialize() and cookieSession are necessary for this.
-
-//   res.send('<h1>Hello</h1>')
-//   console.log("USER: ", req.user);
-//   // req.session.bleh = "bleh";
-//   // res.send('You have reached the callback uri');
-//   // res.redirect('../profile')
-
-// });
-
 module.exports = router;
