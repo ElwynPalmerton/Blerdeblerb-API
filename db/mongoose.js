@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
 
-const dbURI = process.env.MONGODB_URI;
+let mongoURI;
+
+if (process.env.ENVIRONMENT === "dev") {
+  dbURI = process.env.LOCAL_MONGODB_URI;
+} else {
+  dbURI = process.env.MONGODB_URI;
+}
 
 const db = mongoose
   .connect(dbURI, {
