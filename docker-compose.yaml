@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+  blerdeblurb-api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5001:5000
+    environment:
+      - MONGODB_URI=mongodb://admin:password@mongodb
+      - TEMP_SECRET=tempsecretforrunninglocally
+      - ENVIRONMENT=docker
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongo-data:/data/db
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8080:8081
+    depends_on: ["mongodb"]
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+volumes:
+  mongo-data:
+    driver: local
+# This was included after build in the frontend tutorial...
+# volumes:
+#   - '.:/app'
+#   - '/app/node_modules'

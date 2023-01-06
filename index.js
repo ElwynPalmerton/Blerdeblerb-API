@@ -35,10 +35,19 @@ app.use("/following", followingRouter);
 
 app.get("/test", async (req, res) => {
   console.log("hello test");
-  return res.status(200).send("Hello Test!");
+  return res
+    .status(200)
+    .send(
+      `Hello Test! ${process.env.MONGODB_URI} - ${process.env.ENVIRONMENT}`
+    );
 });
 
-const port = 8080;
+let port = 8080;
+
+if (process.env.ENVIRONMENT === "docker") {
+  port = 5000;
+}
+
 app.listen(port, () => {
   console.log(`Blerdeblerb listening on ${port}`);
 });

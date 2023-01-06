@@ -1,11 +1,9 @@
 const mongoose = require("mongoose");
 
-let mongoURI;
+let dbURI = process.env.MONGODB_URI;
 
 if (process.env.ENVIRONMENT === "dev") {
   dbURI = process.env.LOCAL_MONGODB_URI;
-} else {
-  dbURI = process.env.MONGODB_URI;
 }
 
 const db = mongoose
