@@ -1,4 +1,6 @@
 
+COMMANDS
+
 docker images - list local images.
 docker ps - list running containers
 
@@ -9,25 +11,34 @@ docker build . -t blerb-api:1
 Run the image above in a container
 docker run -it --rm -p 8080:8080 blerb-api:1
 
+To run with docker-compose
+docker-compose up -d --build
 
 
-1. Add a separate docker-compose for the API in the root of the API.
-    :: Test this locally with the TEST endpoint.
+====================================================================================================
 
-2. Cut and paste the mongo code form the Nana tutorial.
-    :: Check to see that the mongo UI works with the mongo db.
-    :: Test register and login endpoints from containerized API.
-    :: Add the environment variables for 
-        - MONGODB_URI
-        - TEMP_SECRET
-        - ENVIRONMENT?
-    :: Make sure that the environment variables, naming, and endpoints used match
-        the actual containerized mongoDB.
 
-3. Figure out what's going on with the naming and container-image generation in the UI docker-compose.
-    :: Change the name in the docker-compose to blerdeblurb-UI.
+TO DO
 
-4. Move all of this into the UI's docker-compose and test all functionality.
-    :: if this doesn't initially work.
-    :: Call the test endpoint from Postman.
+
+1. Move the UI into the API docker-compose
+    :: Check the browser.
+    :: Test all functionality.
+    :: Make sure it has the environment variables and gets the right URL.
+
+
+    Troubleshooting:
+    :: Call the test & other endpoint from Postman.
     :: Move the TEST endpoint into a useEffect in the frontend.
+    :: Try moving/renaming the dockerfile in the UI's docker-compose
+
+
+
+
+====================================================================================================
+
+
+Questions:
+
+
+What is build context in the frontend docker-compose?

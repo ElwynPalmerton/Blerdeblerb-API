@@ -1,6 +1,19 @@
 version: '3.7'
 
 services:
+  blerdeblurb-ui:
+    container_name: client
+    build:
+      context: ../client
+      dockerfile: Dockerfile
+    volumes:
+      - '../client:/app'
+      - '/app/node_modules'
+    ports:
+      - 3001:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - REACT_APP_ENV=docker
   blerdeblurb-api:
     container_name: api
     build:
@@ -33,7 +46,3 @@ services:
 volumes:
   mongo-data:
     driver: local
-# This was included after build in the frontend tutorial...
-# volumes:
-#   - '.:/app'
-#   - '/app/node_modules'
