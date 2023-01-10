@@ -35,11 +35,7 @@ app.use("/following", followingRouter);
 
 app.get("/test", async (req, res) => {
   console.log("hello test");
-  return res
-    .status(200)
-    .send(
-      `Hello Test! ${process.env.MONGODB_URI} - ${process.env.ENVIRONMENT}`
-    );
+  return res.status(200).send(`Environment: ${process.env.ENVIRONMENT}`);
 });
 
 let port = 8080;
