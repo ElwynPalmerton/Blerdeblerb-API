@@ -1,6 +1,6 @@
 # Blerdeblurb
 
-## About Blerdeblurb!
+## About Blerdeblurb
 
 Blerdeblurb was created by Elwyn Palmerton in 2020 as project for learning and practicing React. It was was modeled roughly after Twitter and designed to have a similar functionality with its own style. In 2022 it was redeployed on AWS.
 
@@ -35,16 +35,21 @@ Blerdeblurb is deployed on AWS with the following services
 
 ## Running Blerdeblurb
 
+# Running Blerdeblurb
+
 _Blerdeblurb_ can be run locally with or without docker.
 
-To run Blerdeblurb with docker and docker-compose
+## To run Blerdeblurb with docker and docker-compose
 
 1. Clone both repos into the same folder so that the folder structure looks like this:
 
-Blerdeblurb
-|-- Blerdeblerb-client
-|-- Blerdeblurb-API blerdeblurb.com
+Blerdeblurb <br>
+├── API <br>
+├── client
 
+Clone frontend: `git clone https://github.com/ElwynPalmerton/Blerdeblerb-client.git` <br>
+Clone backend: `git clone https://github.com/ElwynPalmerton/Blerdeblerb-API.git` <br>
+  
 (NOTE: the spelling of the repo names (blerdeblerb) is different than the URL )
 
 2. Navigate into the root level folder for the API repo
@@ -52,6 +57,8 @@ Blerdeblurb
 3. Run `docker-compose up -d --build` from the command line.
 
 4. To stop: run `docker-compose stop`
+
+## Run locally (without Docker)
 
 To run Blerdeblurb locally, you need to clone and run both repos:
 
@@ -63,11 +70,12 @@ To run Blerdeblurb locally, you need to clone and run both repos:
 
 **backend:**
 
-1. Run `git clone https://github.com/ElwynPalmerton/Blerdeblerb-API.git' from the command line.
+1. Run `git clone https://github.com/ElwynPalmerton/Blerdeblerb-API.git` from the command line.
 2. Run `npm start` from inside the root level of the repo.
 
 **MongoDB:**
-_You also need to MongoDB locally._
+
+_You also need to install MongoDB locally to run Blerdeblurb._
 
 1. Check to see if you have mongoDB installed locally by running `mongo --version`.
 2. If you need to install mongoDB please consult the documentation at [MongoDB Installation Documentation(https://www.mongodb.com/docs/manual/installation/)]
