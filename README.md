@@ -8,7 +8,7 @@ Blerdeblurb was created by Elwyn Palmerton in 2020 as project for learning and p
 
 ### Frontend
 
-The Blerdeblurb frontend was created with React, Material-UI, and Redux. It uses JWT for login and authentication.
+The Blerdeblurb frontend was created with React, Material-UI, and Redux. It uses JWT's for login and authentication.
 
 ### Backend
 
@@ -39,7 +39,9 @@ Blerdeblurb is deployed on AWS with the following services
 
 _Blerdeblurb_ can be run locally with or without docker.
 
-## To run Blerdeblurb with docker and docker-compose
+## To run Blerdeblurb _with_ docker and docker-compose
+
+NOTE: To run locally with docker you need to have docker installed. Consult the [docker documentation](https://docs.docker.com/get-docker/) for more information.
 
 1. Clone both repos into the same folder so that the folder structure looks like this:
 
