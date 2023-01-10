@@ -39,10 +39,19 @@ _Blerdeblurb_ can be run locally with or without docker.
 
 To run Blerdeblurb with docker and docker-compose
 
-1. Clone both repos into the same folder.
+1. Clone both repos into the same folder so that the folder structure looks like this:
+
+Blerdeblurb
+|-- Blerdeblerb-client
+|-- Blerdeblurb-API blerdeblurb.com
+
+(NOTE: the spelling of the repo names (blerdeblerb) is different than the URL )
+
 2. Navigate into the root level folder for the API repo
 
-3.
+3. Run `docker-compose up -d --build` from the command line.
+
+4. To stop: run `docker-compose stop`
 
 To run Blerdeblurb locally, you need to clone and run both repos:
 

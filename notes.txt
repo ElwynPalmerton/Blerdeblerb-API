@@ -1,1 +1,9 @@
+## Sharp
 
+There is a conflict with the node version for this project and the npm package Sharp.
+
+To deploy to EB Sharp needs to be removed. The .platform scripts will re-install it on the server.
+
+To deploy locally with docker-compose Sharp@0.22.1 needs to be installed.
+
+npm i sharp@0.22.1
