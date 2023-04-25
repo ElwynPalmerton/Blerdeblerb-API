@@ -35,6 +35,8 @@ Blerdeblurb is deployed on AWS with the following services
 
 ## Running Blerdeblurb
 
+#Run locally (with Docker)
+
 _Blerdeblurb_ can be run locally with or without docker.
 
 To run Blerdeblurb with docker and docker-compose
@@ -52,6 +54,8 @@ Blerdeblurb
 3. Run `docker-compose up -d --build` from the command line.
 
 4. To stop: run `docker-compose stop`
+
+# Run locally (without Docker)
 
 To run Blerdeblurb locally, you need to clone and run both repos:
 
