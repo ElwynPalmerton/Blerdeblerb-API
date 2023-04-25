@@ -1,6 +1,6 @@
 # Blerdeblurb
 
-## About Blerdeblurb!
+## About Blerdeblurb
 
 Blerdeblurb was created by Elwyn Palmerton in 2020 as project for learning and practicing React. It was was modeled roughly after Twitter and designed to have a similar functionality with its own style. In 2022 it was redeployed on AWS.
 
@@ -8,7 +8,7 @@ Blerdeblurb was created by Elwyn Palmerton in 2020 as project for learning and p
 
 ### Frontend
 
-The Blerdeblurb frontend was created with React, Material-UI, and Redux. It uses JWT for login and authentication.
+The Blerdeblurb frontend was created with React, Material-UI, and Redux. It uses JWT's for login and authentication.
 
 ### Backend
 
@@ -35,11 +35,15 @@ Blerdeblurb is deployed on AWS with the following services
 
 ## Running Blerdeblurb
 
+# Running Blerdeblurb
+
 #Run locally (with Docker)
 
 _Blerdeblurb_ can be run locally with or without docker.
 
-To run Blerdeblurb with docker and docker-compose
+## To run Blerdeblurb _with_ docker and docker-compose
+
+NOTE: To run locally with docker you need to have docker installed. Consult the [docker documentation](https://docs.docker.com/get-docker/) for more information.
 
 1. Clone both repos into the same folder so that the folder structure looks like this:
 
@@ -55,6 +59,8 @@ Blerdeblurb
 
 4. To stop: run `docker-compose stop`
 
+## Run locally (without Docker)
+
 # Run locally (without Docker)
 
 To run Blerdeblurb locally, you need to clone and run both repos:
@@ -67,12 +73,13 @@ To run Blerdeblurb locally, you need to clone and run both repos:
 
 **backend:**
 
-1. Run `git clone https://github.com/ElwynPalmerton/Blerdeblerb-API.git' from the command line.
+1. Run `git clone https://github.com/ElwynPalmerton/Blerdeblerb-API.git` from the command line.
 2. Run `npm start` from inside the root level of the repo.
 
 **MongoDB:**
-_You also need to MongoDB locally._
+
+_You also need to install MongoDB locally to run Blerdeblurb._
 
 1. Check to see if you have mongoDB installed locally by running `mongo --version`.
-2. If you need to install mongoDB please consult the documentation at [MongoDB Installation Documentation(https://www.mongodb.com/docs/manual/installation/)]
+2. If you need to install mongoDB please consult the [MongoDB Documentation](https://www.mongodb.com/docs/manual/installation/)
 3. Start mongoDB by running `mongod`.
